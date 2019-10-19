@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jfeinstein.jazzyviewpager"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/cabin_icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.NoActionBar" >
+        <activity
+            android:name="com.jfeinstein.jazzyviewpager.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" 
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name=".AddContacts"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name=".Contacts"
+            android:label="@string/app_name"
+           	android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name=".SOSMain"
+            android:label="@string/app_name"
+           	android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 
+        			chat head start 
+         -->
+        <activity
+            android:name="com.jfeinstein.chathead.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <service android:name="com.jfeinstein.chathead.MultiWindow" >
+        </service>
+        <service android:name="com.jfeinstein.chathead.SimpleWindow" >
+        </service>
+        <service android:name="com.jfeinstein.chathead.MostBasicWindow" >
+        </service>
+        <service android:name="WidgetsWindow" >
+        </service>
+        <service 
+            android:name="com.jfeinstein.chathead.closeService" >
+        </service>
+        <service
+            android:name="com.jfeinstein.chathead.PlayerService">
+        </service>
+        
+          <activity
+            android:name="com.jfeinstein.chathead.SampleOverlayShowActivity"
+            android:theme="@android:style/Theme.Dialog" >
+           
+        </activity>
+        
+        <activity
+            android:name="com.jfeinstein.chathead.SampleOverlayHideActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        
+         <activity
+            android:name="com.jfeinstein.chathead.fullScreenActivity"
+           android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        
+       	<service android:name="com.jfeinstein.chathead.SampleOverlayService" >
+        </service>
+        
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="clan.main"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+       	android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission 
+        android:name="clan.main.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    
+    <uses-permission android:name="clan.main.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- For GPlus Login -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="clan.main.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" >
+    </permission>
+
+    <uses-permission android:name="clan.main.permission.C2D_MESSAGE" />
+
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        	android:glEsVersion="0x00020000"
+        	android:required="true" />
+
+    <!-- Requires OpenGL ES version 2 -->
+    <uses-feature
+        	android:glEsVersion="0x00020000"
+        	android:required="true" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/clan_icon_3d"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.NoActionBar" >
+        
+        <!-- GCM Phone Ring Receiver 
+		<receiver
+            android:name="clan.ring.phone.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="clan.ring.phone" />
+            </intent-filter>
+        </receiver>
+        <service android:name="clan.ring.phone.GcmIntentService" />-->
+        
+        <activity
+            android:name="clan.ring.phone.PhoneRing"
+            android:label="@string/title_activity_location"
+            android:screenOrientation="portrait" >
+        </activity>
+        	
+        <!-- GCM Receiver -->
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="clan.main" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".GcmIntentService" />
+
+        <!-- Clan Main Starts -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Clan Main End -->
+
+
+        <!-- Clan SOS Starts -->
+	        <activity
+	            android:name="clan.sos.AddContacts"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
+	        </activity>
+	        <activity
+	            android:name="clan.sos.Contacts"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Light.NoTitleBar" >
+	        </activity>
+	        <activity
+	            android:name="clan.sos.SOSMain"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo.NoActionBar" >
+	        </activity>
+        <!-- Clan SOS End -->
+        
+        <!-- chat head start -->
+	        <activity
+	            android:name="clan.chathead.MainActivity"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
+	        </activity>
+
+	        <service android:name="clan.chathead.MultiWindow" >
+	        </service>
+	        <service android:name="clan.chathead.SimpleWindow" >
+	        </service>
+	        <service android:name="clan.chathead.MostBasicWindow" >
+	        </service>
+	        <service android:name=".WidgetsWindow" >
+	        </service>
+	        <service android:name="clan.chathead.closeService" >
+	        </service>
+	        <service android:name="clan.chathead.SOS_Service" >
+	        </service>
+
+	        <activity
+	            android:name="clan.chathead.SampleOverlayShowActivity"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Dialog" >
+	        </activity>
+	        <activity
+	            android:name="clan.chathead.SampleOverlayHideActivity"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Dialog" >
+	        </activity>
+	        <activity
+	            android:name="clan.chathead.fullScreenActivity"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+	        </activity>
+	        <service
+	            android:name="clan.chathead.SampleOverlayService"
+	            android:screenOrientation="portrait" >
+	        </service>
+        <!-- chat head END -->
+
+
+        <!-- LOGIN starts -->
+	        <activity
+	            android:name="clan.login.Login"
+	            android:label="@string/title_activity_login"
+	            android:screenOrientation="portrait" >
+	        </activity>
+	        <activity
+	            android:name="clan.login.SignUp"
+	            android:label="@string/title_activity_sign_up"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" >
+	        </activity>
+        <!-- LOGIN ENDS -->
+
+	        <activity
+	            android:name=".HomeActivity"
+	            android:label="@string/title_activity_home"
+	            android:screenOrientation="portrait" >
+	        </activity>
+
+        <!-- Chat Interface starts -->
+	        <activity
+	            android:name="clan.chatinterface.HelloBubblesActivity"
+	            android:label="@string/title_activity_login"
+	            android:screenOrientation="portrait" >
+	        </activity>
+        <!-- Chat Interface ENDS -->
+	        
+	        <activity
+	            android:name=".Location"
+	            android:label="@string/title_activity_location"
+	            android:screenOrientation="portrait" >
+	        </activity>
+        
+        <!-- GPlus Login Starts -->
+	        <activity
+	            android:name="clan.gPlusLogin.GPlus_Login"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait" >
+	        </activity>
+        <!-- GPlus Login Ends -->
+
+
+        <!-- Facebook Login Starts -->
+        <activity
+	            android:name="clan.facebookLogin.FacebookLogin"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait" >
+	        </activity>
+        <!-- Facebook Login Ends -->
+
+
+        <!-- Navigation Drawer Activity -->
+	        <activity
+	            android:name="clan.nav_drawer.slidingmenu.MainActivity"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo" >
+	            <!-- Navigatio Drawer must have a title bar -->
+	        </activity>
+        <!-- Navigation Draser Activity Ends -->
+
+
+        <!-- Sending Invite Activity -->
+	        <activity
+	            android:name=".SendingInvite"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" >
+	        </activity>
+        <!-- Sending Invite Activity Ends -->
+
+
+        <!-- Friend Time Line  Activity -->
+	        <activity
+	            android:name="clan.nav_drawer.slidingmenu.FriendTimeLine"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo" >
+	        </activity>
+        <!-- Friend Time Line Activity Ends -->
+        
+        <!-- Add ItemInToDoList Activity -->
+	        <activity
+	            android:name="clan.nav_drawer.slidingmenu.AddItemInToDoList"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+	             >
+	        </activity>
+        <!-- ItemInToDoList Activity Ends -->
+        
+        <!-- Add DateTimeInToDoList Activity -->
+	        <activity
+	            android:name="clan.nav_drawer.slidingmenu.AddDateTimeToDoList"
+	            android:label="@string/app_name"
+	            android:screenOrientation="portrait"
+	            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
+	             >
+	        </activity>
+        <!-- DateTimeInToDoList Activity Ends -->
+
+        <service android:name="clan.customeview.database.FriendService" >
+        </service>
+
+        <!-- Friend Time Line Activity Ends -->
+	        <receiver
+	            android:name="clan.alarmmanager.AlarmManagerBroadcastReceiver"
+	            android:enabled="true" >
+	        </receiver>
+	
+	        <service
+	            android:name="clan.alarmmanager.LocationUpdateOnServerService"
+	            android:enabled="true"
+	            android:exported="true" >
+	        </service>
+	
+	        <receiver
+	            android:name="clan.alarmmanager.SampleBootReceiver"
+	            android:enabled="true" >
+	            <intent-filter>
+	                <action android:name="android.intent.action.BOOT_COMPLETED" >
+	                </action>
+	            </intent-filter>
+	            <intent-filter>
+	                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+	            </intent-filter>
+	        </receiver>
+	        
+	        <receiver  android:process=":remote" android:name="clan.nav_drawer.slidingmenu.AlarmReceiver"></receiver>
+	
+	        <meta-data
+	            android:name="com.google.android.maps.v2.API_KEY"
+	            android:value="AIzaSyAmtjPgphlXBdstZIcDtOlT-IMqvw5FDws" />
+	        <meta-data
+	            android:name="com.google.android.gms.version"
+	            android:value="@integer/google_play_services_version" />
+	
+	        <activity
+	            android:name="clan.nav_drawer.slidingmenu.ViewLocation"
+	            android:label="@string/title_activity_view_location" >
+	        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/welcome_to_clan_rounded_xml"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/friend_time_line_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="18dp"
+            android:text="HI"
+            android:textColor="#ffffff"
+            android:textSize="30dp" />
+
+           <TextView
+               android:id="@+id/friend_time_line_email"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/friend_time_line_name"
+               android:layout_alignParentRight="true"
+               android:layout_below="@+id/friend_time_line_name"
+               android:text="HI"
+               android:textAppearance="?android:attr/textAppearanceLarge"
+               android:textColor="#ffffff"
+               android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/friend_time_line_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/friend_time_line_email"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/friend_time_line_email"
+                android:text="Noida"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="30dp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/AddRemainder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       	android:layout_below="@id/RelativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#E65100"
+        android:text="Add Remainder" 
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/trackLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#E65100"
+        android:text="Track Location" />
+
+</RelativeLayout>

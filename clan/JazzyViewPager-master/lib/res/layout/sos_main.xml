@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/buttonSOS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="99dp"
+            android:text="SOS"
+            android:textSize="70dp" />
+
+        <Button
+            android:id="@+id/startSosChatHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonSOS"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="50"
+            android:text="Start Chat Head" />
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/addcontact_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <Button
+            android:id="@+id/buttonAddContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text="Add Contact" />
+
+        <Button
+            android:id="@+id/buttonViewContacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text="View Contacts" />
+    </LinearLayout>
+
+</LinearLayout>

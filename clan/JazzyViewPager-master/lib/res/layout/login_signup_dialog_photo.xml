@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/login_signup_dialog_photo_button_pictake"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_camera_roundedborders_green"
+            android:drawablePadding="10sp"
+            android:drawableTop="@drawable/login_signup_camera"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp"
+            android:text="Take A picture"
+            android:textColor="#FFFFFF" />
+
+         <Button
+            android:id="@+id/login_signup_dialog_photo_button_gallery"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_camera_roundedborders_blue"
+            android:drawablePadding="10sp"
+            android:drawableTop="@drawable/login_signup_camera"
+            android:paddingBottom="10sp"
+            android:layout_marginTop="20dp"
+            android:paddingTop="10sp"
+            android:text="Camera roll"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</LinearLayout>

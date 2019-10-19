@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Add Date Time"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#3F51B5" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_layout1"
+        android:layout_centerHorizontal="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="10"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/horizontalLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/setDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#3F51B5"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="Set Date"
+                            android:onClick="showTimePickerDialog"
+                            android:textColor="#ffffff" />
+
+                        <Button
+                            android:id="@+id/setTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#3F51B5"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:onClick="showTimePickerDialog"
+                            android:text="Set Time"
+                            android:textColor="#ffffff" />
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/button_done"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#E65100"
+                        android:text="Done"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
